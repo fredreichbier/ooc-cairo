@@ -1,0 +1,4 @@
+= All
+Name: cairo 
+Description: cairo c lib
+Libs: -lcairo
