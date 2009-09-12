@@ -75,8 +75,8 @@ Context: cover from cairo_t* {
     popGroupToSource: extern(cairo_pop_group_to_source) func
     setOperator: extern(cairo_set_operator) func (op: Operator)
     setSource: extern(cairo_set_source) func (source: Pattern)
-    setSourceRgb: extern(cairo_set_source_rgb) func (red: Double, green: Double, blue: Double)
-    setSourceRgba: extern(cairo_set_source_rgba) func (red: Double, green: Double, blue: Double, alpha: Double)
+    setSourceRGB: extern(cairo_set_source_rgb) func (red: Double, green: Double, blue: Double)
+    setSourceRGBa: extern(cairo_set_source_rgba) func (red: Double, green: Double, blue: Double, alpha: Double)
     setSourceSurface: extern(cairo_set_source_surface) func (surface: Surface, x: Double, y: Double)
     setTolerance: extern(cairo_set_tolerance) func (tolerance: Double)
     setAntialias: extern(cairo_set_antialias) func (antialias: Antialias)
@@ -185,17 +185,17 @@ Pattern: cover from cairo_pattern_t* {
     getUserData: extern(cairo_pattern_get_user_data) func (key: UserDataKey) -> Void*
     setUserData: extern(cairo_pattern_set_user_data) func (key: UserDataKey, userData: Void*, destroy: Func) -> Status
     getType: extern(cairo_pattern_get_type) func -> PatternType
-    addColorStopRgb: extern(cairo_pattern_add_color_stop_rgb) func (offset: Double, red: Double, green: Double, blue: Double)
-    addColorStopRgba: extern(cairo_pattern_add_color_stop_rgba) func (offset: Double, red: Double, green: Double, blue: Double, alpha: Double)
+    addColorStopRGB: extern(cairo_pattern_add_color_stop_rgb) func (offset: Double, red: Double, green: Double, blue: Double)
+    addColorStopRGBa: extern(cairo_pattern_add_color_stop_rgba) func (offset: Double, red: Double, green: Double, blue: Double, alpha: Double)
     setMatrix: extern(cairo_pattern_set_matrix) func (matrix: Matrix)
     getMatrix: extern(cairo_pattern_get_matrix) func (matrix: Matrix)
     setExtend: extern(cairo_pattern_set_extend) func (extend: Extend)
     getExtend: extern(cairo_pattern_get_extend) func -> Extend
     setFilter: extern(cairo_pattern_set_filter) func (filter: Filter)
     getFilter: extern(cairo_pattern_get_filter) func -> Filter
-    getRgba: extern(cairo_pattern_get_rgba) func (red: Double*, green: Double*, blue: Double*, alpha: Double*) -> Status
+    getRGBa: extern(cairo_pattern_get_rgba) func (red: Double*, green: Double*, blue: Double*, alpha: Double*) -> Status
     getSurface: extern(cairo_pattern_get_surface) func (surface: Surface*) -> Status
-    getColorStopRgba: extern(cairo_pattern_get_color_stop_rgba) func (index: Int, offset: Double*, red: Double*, green: Double*, blue: Double*, alpha: Double*) -> Status
+    getColorStopRGBa: extern(cairo_pattern_get_color_stop_rgba) func (index: Int, offset: Double*, red: Double*, green: Double*, blue: Double*, alpha: Double*) -> Status
     getColorStopCount: extern(cairo_pattern_get_color_stop_count) func (count: Int*) -> Status
     getLinearPoints: extern(cairo_pattern_get_linear_points) func (x0: Double*, y0: Double*, x1: Double*, y1: Double*) -> Status
     getRadialCircles: extern(cairo_pattern_get_radial_circles) func (x0: Double*, y0: Double*, r0: Double*, x1: Double*, y1: Double*, r1: Double*) -> Status
