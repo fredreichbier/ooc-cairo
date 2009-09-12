@@ -19,7 +19,7 @@ main: func (argc: Int, argv: String*) {
     surface := ImageSurface new(0, w, h) /* 0 = CAIRO_FORMAT_ARGB32 */
     cr := Context new(surface)
 
-    cr setSourceRgb(0, 0, 0)
+    cr setSourceRGB(0, 0, 0)
     cr paint()
 	
 	srand(time(null))
@@ -27,7 +27,7 @@ main: func (argc: Int, argv: String*) {
 	for(i in 0..20) {
 		cr setLineWidth(rand() % 18 + 2)
 		
-		cr setSourceRgb(
+		cr setSourceRGB(
 			(rand() % 255) / 255.0 as Double,
 			(rand() % 255) / 255.0 as Double,
 			(rand() % 255) / 255.0 as Double,
