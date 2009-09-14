@@ -1,4 +1,4 @@
-include cairo/cairo
+include cairo
 
 use cairo/cairo
 
