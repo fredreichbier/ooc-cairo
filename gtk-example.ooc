@@ -1,10 +1,5 @@
-import cairo/Cairo
+import cairo/[Cairo, GdkCairo]
 import gtk/[Gtk, Widget, Window]
-
-GdkDrawable: extern cover
-gtk_widget_get_window: extern func (Widget) -> GdkDrawable*
-gdk_cairo_create: extern func (GdkDrawable*) -> Context
-exit: extern func
 
 repaint: func (cr: Context) {
 	/* code from test.ooc! */
@@ -24,7 +19,7 @@ onExpose: func (widget: Widget, event, userData: Pointer) -> Bool {
 	/* expose event is sent when the widget (or parts of it) needs to be redrawn.
 	   we repaint everything then.
 	 */
-	cr := gdk_cairo_create(gtk_widget_get_window(widget))
+	cr := GdkContext new(widget getWindow())
 	repaint(cr)
 	cr destroy()
 	return true
@@ -40,4 +35,4 @@ main: func {
 	Gtk main()
 }
 
-
+exit: extern func
