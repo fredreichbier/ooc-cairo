@@ -1,4 +1,4 @@
-import cairo.Cairo
+import cairo/Cairo
 include math, time
 
 main: func (argc: Int, argv: String*) {

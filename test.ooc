@@ -1,4 +1,4 @@
-import cairo.Cairo
+import cairo/Cairo
 
 main: func {
     w := 400
