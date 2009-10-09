@@ -4,7 +4,6 @@ import gtk/[Gtk, Widget, Window]
 GdkDrawable: extern cover
 gtk_widget_get_window: extern func (Widget) -> GdkDrawable*
 gdk_cairo_create: extern func (GdkDrawable*) -> Context
-gtk_widget_set_app_paintable: extern func (Widget, Bool)
 exit: extern func
 
 repaint: func (cr: Context) {
@@ -34,8 +33,8 @@ onExpose: func (widget: Widget, event, userData: Pointer) -> Bool {
 main: func {
 	win := Window new("Hai.")
 	win setUSize(400, 200) .connect("delete_event", exit)
-	gtk_widget_set_app_paintable(win, true)
-	win connect("expose-event", onExpose)
+	win setAppPaintable(true)
+	win connect("expose-event", onExpose as Func)
 	win showAll()
 
 	Gtk main()
