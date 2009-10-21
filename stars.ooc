@@ -1,6 +1,9 @@
 import cairo/Cairo
 include math, time
 
+use cairo/cairo
+include cairo
+
 main: func (argc: Int, argv: String*) {
 	
 	"Welcome to the ooc-cairo stars generator!" println()
@@ -17,7 +20,7 @@ main: func (argc: Int, argv: String*) {
 	}
 
     surface := ImageSurface new(0, w, h) /* 0 = CAIRO_FORMAT_ARGB32 */
-    cr := Context new(surface)
+    cr := Context new(surface) as MyContext
 
     cr setSourceRGB(0, 0, 0)
     cr paint()
@@ -48,7 +51,7 @@ main: func (argc: Int, argv: String*) {
 	
 }
 
-Context: cover {
+MyContext: cover from cairo_t* extends Context {
 	
 	drawStar: func (x, y, pikes: Int, radius, ratio: Float) {
 		
