@@ -1,3 +1,5 @@
+use cairo, gtk
+
 import cairo/[Cairo, GdkCairo]
 import gtk/[Gtk, Widget, Window]
 

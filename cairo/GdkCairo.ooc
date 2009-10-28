@@ -1,6 +1,6 @@
 include cairo
 
-use cairo/cairo
+use gdk, cairo
 
 import Cairo
 import gdk/Drawable

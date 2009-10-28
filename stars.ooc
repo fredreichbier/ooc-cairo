@@ -1,7 +1,7 @@
 import cairo/Cairo
 include math, time
 
-use cairo/cairo
+use cairo
 include cairo
 
 main: func (argc: Int, argv: String*) {

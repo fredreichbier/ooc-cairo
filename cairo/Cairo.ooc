@@ -1,6 +1,6 @@
 include cairo
 
-use cairo/cairo
+use cairo
 
 cairo_user_data_key_t: extern cover
 
